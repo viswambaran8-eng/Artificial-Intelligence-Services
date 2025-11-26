@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artificial Intelligence Services</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./sign-out.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="The-header">
+        <div class="logo">
+          <a href="./index2.html">
+            <img src="./Assets/Logo_11zon.webp" alt="" />
+          </a>
+        </div>
+        <nav>
+          <ul class="nav_links">
+            <li class="page">
+              <a href="./index2.html">Home</a>
+              <i id="page" class="fa-solid fa-caret-down"></i>
+              <a class="drop_menu" href="./index.html">Home 1</a>
+            </li>
+            <li><a href="./about2.html">About Us</a></li>
+            <!-- <li><a href="#">Packages</a></li> -->
+            <li><a href="./service2.html">Services</a></li>
+            <li><a href="./blog2.html">Blog</a></li>
+            <li><a href="./contact2.html">Contact Us</a></li>
+            <li><a href="./db-2.html">Dashboard</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+          <a href="./sign-in2.html"><i class="fa-regular fa-circle-user"></i></a>
+          <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <div class="close-btn">&times;</div>
+      <ul>
+        <li>
+          <div class="flexdiv">
+            <a href="./index2.html">Home </a>
+            <span class="dropdownArrow">&#9662;</span>
+          </div>
+          <ul class="submenu">
+            <li><a href="./index.html">Home 1</a></li>
+          </ul>
+        </li>
+        <li><a href="./about2.html">About Us</a></li>
+        <!-- <li><a href="./packages.html">Packages</a></li> -->
+        <li><a href="./service2.html">Services</a></li>
+        <li><a href="./blog2.html">Blog</a></li>
+        <li><a href="./contact2.html">Contact Us</a></li>
+        <li><a href="./db-2.html">Dashboard</a></li>
+        <li><a href="./sign-in2.html">Sign In</a></li>
+      </ul>
+    </div>
+
+    <section class="Table">
+      <div class="login-main" data-aos="fade-up">
+        <form id="form" method="get" action="./error.html" class="login">
+          <div>
+            <h1>SIGN UP</h1>
+            <h2>Create Account to manage your events</h2>
+          </div>
+          <input type="name" placeholder="Eg Jerry" required />
+          <input
+            id="inputEmail"
+            type="email"
+            placeholder="you@gmail.com"
+            required
+          />
+          <span id="span_email" class="span_email"></span>
+          <input
+            id="inputPassword"
+            type="password"
+            placeholder="Enter your Password"
+            required
+          />
+          <span id="span_password" class="span_password"></span>
+
+          <input
+            id="inputConfirm"
+            type="password"
+            placeholder="Confirm your Password"
+            required
+          />
+          <span id="span_confirm" class="span_confirm"></span>
+          <!-- <textarea rows="5" placeholder="Your Message"></textarea>   -->
+          <button class="cta-button" type="submit">Sign Up</button>
+          <button class="cta-button" type="reset">
+            <a href="./error.html">Reset</a>
+          </button>
+          <div class="flex" style="margin-top: 20px; padding: 10px">
+            <p>Already have an account? login in here</p>
+            <a
+              href="./sign-in2.html"
+              style="
+                margin-left: 15px;
+                color: rgb(6, 107, 6);
+                text-decoration: none;
+                padding: 2px;
+              "
+            >
+              Login Now
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer data-aos="fade-up">
+      <div id="vanta-fr"></div>
+      <div class="footer-parent">
+        <div class="set1">
+          <img class="logo" src="./Assets/Logo_11zon.webp" alt="" />
+          <p class="footer-para">
+            © 2025 <strong>Stackly AI Services</strong> delivers intelligent
+            solutions, automation capabilities, data-driven insights, and
+            innovative technologies — empowering smarter decisions, enhanced
+            efficiency, and transformative digital experiences.
+          </p>
+          <a href="./error.html">
+            <i class="fa-brands fa-square-linkedin"></i>
+          </a>
+          <a href="./error.html">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="./error.html">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="./error.html">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+        <div class="set2">
+          <h2 class="footer-header">Quick Links</h2>
+          <ul class="footer-ul">
+            <li class="footer-li">
+              <a href="./about2.html">--About Us</a>
+              <a href="./service2.html">--Services</a>
+              <a href="./blog2.html">--Blog</a>
+              <a href="./contact2.html">--Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="set3">
+          <h2 class="footer-header">Work Location</h2>
+          <p class="footer-para">City , State , Country</p>
+          <p class="footer-para">☏ 1234567890</p>
+          <p class="footer-para">support@Stackly.com</p>
+          <p class="footer-para">Mon-Fri : 9:00 - 18:00</p>
+        </div>
+
+        <div class="set4">
+          <h2 class="footer-header">Follow Us</h2>
+          <p class="footer-para">
+            Stay Connected with Stackly for the latest Technology , Updates and
+            Shop your required stuffs .
+          </p>
+        </div>
+      </div>
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15628.64628603643!2d78.15647006034851!3d11.682959309484378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1763574992132!5m2!1sen!2sin"
+          width="100%"
+          height="150"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </footer>
+  </body>
+  <script src="./Sidebar.js"></script>
+  <script src="./footer.js"></script>
+  <script src="./scroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  </script>
+  <script>
+    //   Forms Page
+
+    const Email = document.getElementById("span_email");
+    const Password1 = document.getElementById("span_password");
+    const ConfirmPass = document.getElementById("span_confirm");
+
+    const Form = document.getElementById("form");
+    const InputEmail = document.getElementById("inputEmail");
+    const InputPassword = document.getElementById("inputPassword");
+    const InputConfirm = document.getElementById("inputConfirm");
+
+    Form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const emailvalue = InputEmail.value.trim();
+      const password2 = InputPassword.value.trim();
+      const confirmValue = InputConfirm.value.trim();
+
+      // Email check
+      const validEmail = emailvalue.endsWith("@gmail.com");
+
+      // Password checks
+      const hasUpper = /[A-Z]/.test(password2);
+      const hasLower = /[a-z]/.test(password2);
+      const hasNumber = /[0-9]/.test(password2);
+      const hasSpecial = /[!@#$%^&*(,.?:{}|<>]/.test(password2);
+      const ValidPassword = hasLower && hasUpper && hasNumber && hasSpecial;
+
+      // Email validation
+      if (!validEmail) {
+        Email.textContent = "Please Enter a Valid Email ending with @gmail.com";
+        return;
+      } else {
+        Email.textContent = "";
+      }
+
+      // Password validation
+      if (!ValidPassword) {
+        Password1.textContent =
+          "Password must include uppercase, lowercase, number & special character";
+        return;
+      } else {
+        Password1.textContent = "";
+      }
+
+      // Confirm Password validation
+      if (password2 !== confirmValue) {
+        ConfirmPass.textContent = "Passwords do not match";
+        return;
+      } else {
+        ConfirmPass.textContent = "";
+      }
+
+      // Clear all messages
+      Email.textContent = "";
+      Password1.textContent = "";
+      ConfirmPass.textContent = "";
+
+      Form.reset();
+
+      window.location.href = "./error.html";
+    });
+  </script>
+</html>
