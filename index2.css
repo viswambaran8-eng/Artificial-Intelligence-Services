@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  padding: 30px 50px;
+  /* padding: 30px 50px; */
   position: sticky;
   top: 0;
   z-index: 2000;
@@ -30,7 +30,7 @@ header {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   background-color: white;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .logo img {
@@ -44,7 +44,8 @@ header {
   align-items: center;
   font-size: larger;
   font-weight: 600;
-  gap: 25px;
+  padding-right: 20px;
+  /* gap: 25px; */
 }
 
 .nav_links li {
@@ -59,14 +60,9 @@ header {
   font-weight: bolder;
 }
 
-@media screen and (max-width:380px) {
-    .nav_links ul li {
-        font-size: small;
-    }
-}
-
 i {
   cursor: pointer;
+  color: #554b9a;
 }
 
 .icons {
@@ -81,6 +77,18 @@ i {
   color: #554b9a;
   font-size: larger;
   padding-right: 50px;
+}
+
+@media screen and (max-width: 380px) {
+  .nav_links li a {
+    font-size: medium;
+  }
+  .nav_links {
+    padding-right: 5px;
+  }
+  i {
+    font-size: small;
+  }
 }
 
 .hamburger {
@@ -135,18 +143,16 @@ i {
 }
 
 .page {
-    padding-right: 30px;
+  padding-right: 30px;
 }
 
-@media screen and (max-width:380px) {
-    .page {
-        padding-right: 5px;
-    }
+@media screen and (max-width: 380px) {
+  .page {
+    padding-right: 5px;
+  }
 }
 
 @media screen and (max-width: 1080px) {
-
-
   .hamburger {
     display: block;
   }
@@ -156,11 +162,6 @@ i {
   }
 }
 
-@media screen and (max-width: 650px) {
-  header {
-    padding: 10px 15px;
-  }
-}
 /* ---------------------------------------------------------------------------- */
 
 /* Sidebar */
@@ -292,7 +293,7 @@ main img {
   letter-spacing: 2px;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1450px) {
   .main-content {
     max-width: 100%;
     backdrop-filter: blur(3px);
@@ -308,7 +309,14 @@ main img {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+  .main-content {
+    top: 30%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
   main {
     height: 60vh;
   }
@@ -446,7 +454,7 @@ main img {
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width: 550px) {
   .heading h3 {
     font-size: 22px;
     padding: 5px;
@@ -876,13 +884,13 @@ p {
   box-shadow: 0 6px 15px rgba(98, 0, 255, 0.35);
 }
 
-@media screen and (max-width:1250px) {
-  .Table4{
+@media screen and (max-width: 1250px) {
+  .Table4 {
     flex-wrap: wrap;
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .Table4 .container ul {
     padding: 10px;
   }
@@ -896,9 +904,6 @@ p {
     font-size: large;
   }
 }
-
-
-
 
 /* ------------------ FOOTER PAGE ------------------------ */
 
