@@ -335,7 +335,7 @@ main img {
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 567px) {
   .main-content h2 {
     font-size: 30px;
     letter-spacing: 1px;
@@ -346,6 +346,17 @@ main img {
   }
   .main-content {
     top: 0%;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .main-content h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  .main-content p {
+    font-size: 16px;
+    letter-spacing: 1px;
   }
 }
 

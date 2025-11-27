@@ -101,8 +101,8 @@
       </div>
 
       <form method="get" action="./error.html" class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Name"  />
+        <input type="email" placeholder="Your Email"  />
         <textarea rows="5" placeholder="Your Message"></textarea>
         <div class="div">
           <button class="cta-button" type="submit">Send Message</button>
@@ -174,6 +174,31 @@
       </div>
     </footer>
   </body>
+<script>
+  let alertCount = 0; // track how many times user submitted
+
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop normal submit
+
+    alertCount++;
+
+    if (alertCount === 1) {
+      // First time → just alert
+      alert("Please fill all fields before submitting!");
+      return; // allow user to stay on page
+    }
+
+    if (alertCount === 2) {
+      // Second time → redirect to error page
+      alert("Form still incomplete. Redirecting...");
+      window.location.href = "./error.html";
+    }
+  });
+</script>
+
+
   <script src="./Sidebar.js"></script>
   <script src="./footer.js"></script>
   <!-- <script src="./scroll.js"></script> -->
