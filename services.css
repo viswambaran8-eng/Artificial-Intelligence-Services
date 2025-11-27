@@ -255,6 +255,7 @@ i {
   width: 100%;
   gap: 10px;
   padding: 10px 5%;
+  overflow-x: hidden;
 }
 
 .Table1 .container {
@@ -275,6 +276,7 @@ i {
   width: 100%;
   gap: 10px;
   padding: 10px 5%;
+  overflow-x: hidden;
 }
 
 .Table2 .container {
@@ -348,6 +350,7 @@ i {
   padding: 10px 5%;
   display: flex;
   gap: 20px;
+  overflow-x: hidden;
 }
 
 .Table3 .container {
