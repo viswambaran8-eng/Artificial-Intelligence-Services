@@ -175,29 +175,26 @@
     </footer>
   </body>
 
-<script>
-  let alertCount = 0; // track how many times user submitted
+<!-- <script>
+  let alertCount = 0; 
 
   const form = document.querySelector(".contact-form");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop normal submit
+    e.preventDefault(); 
 
     alertCount++;
 
     if (alertCount === 1) {
-      // First time → just alert
       alert("Please fill all fields before submitting!");
-      return; // allow user to stay on page
+      return; 
     }
 
     if (alertCount === 2) {
-      // Second time → redirect to error page
-      // alert("Form still incomplete. Redirecting...");
       window.location.href = "./error.html";
     }
   });
-</script>
+</script> -->
 
 
   <script src="./Sidebar.js"></script>
