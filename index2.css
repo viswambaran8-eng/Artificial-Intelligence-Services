@@ -316,7 +316,7 @@ main img {
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 790px) {
   main {
     height: 60vh;
   }
