@@ -446,6 +446,18 @@ main img {
   -webkit-text-fill-color: transparent;
 }
 
+@media screen and (max-width:550px) {
+  .heading h3 {
+    font-size: 22px;
+    padding: 5px;
+  }
+  .heading p {
+    font-size: medium;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
 .heading p {
   padding: 15px;
   font-size: x-large;
@@ -788,6 +800,105 @@ p {
     gap: 50px;
   }
 }
+
+/* Final added */
+
+.Table4 {
+  padding: 10px 5%;
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+}
+
+.Table4 .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a392f5;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.Table4 .container h2 {
+  padding: 10px;
+  background: linear-gradient(to right, #d10b8f, #3a0475);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Roboto Slab", serif;
+}
+
+.Table4 .container h3 {
+  background: linear-gradient(to right, #b400ff, #4a0e8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Roboto Slab", serif;
+}
+
+.Table4 .container ul li p {
+  color: #0a1a4f;
+  font-size: medium;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.Table4 .container:hover {
+  border-bottom: 8px solid #2c1555;
+}
+
+.Table4 .container button {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-top: 10px;
+  background: linear-gradient(to right, #d10b8f, #4a0e8f);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 8px;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.Table4 .container button a {
+  text-decoration: none;
+}
+
+.Table4 .container button a p {
+  color: white;
+}
+
+.Table4 .container button:hover {
+  background: linear-gradient(to right, #ff4ecd, #6d21ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(98, 0, 255, 0.35);
+}
+
+@media screen and (max-width:1250px) {
+  .Table4{
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .Table4 .container ul {
+    padding: 10px;
+  }
+  .Table4 .container ul li p {
+    font-size: small;
+  }
+  .Table4 .container h2 {
+    font-size: larger;
+  }
+  .Table4 .container h3 {
+    font-size: large;
+  }
+}
+
+
+
 
 /* ------------------ FOOTER PAGE ------------------------ */
 
