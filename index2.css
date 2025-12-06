@@ -110,7 +110,7 @@ i {
 }
 
 .The-header nav ul li a:hover::after {
-  width: 65%;
+  width: 100%;
   background-color: #a392f5;
 }
 
