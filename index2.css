@@ -364,7 +364,7 @@ main img {
 /* --------------------------------------------------- */
 
 .Structure {
-  overflow-x: hidden;
+    overflow: hidden;
   padding: 10px 5%;
 }
 
@@ -378,7 +378,7 @@ main img {
   display: grid;
   grid-template-columns: auto auto auto auto;
   padding: 10px 5%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .Box {
@@ -500,24 +500,44 @@ main img {
   margin: 20px;
   z-index: -1;
 }
-
+/* ===== SWIPER SLIDES PREMIUM STYLE ===== */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
-  border: 1px solid #a392f5;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a0f2e, #2c1555);
+  background: linear-gradient(135deg, #1b0e2a, #2e1360);
+  box-shadow: 0 8px 20px rgba(44, 21, 85, 0.25);
 }
 
-/* Lift effect */
+/* Lift and shine on hover */
 .swiper-slide:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 30px rgba(44, 21, 85, 0.25);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(76, 201, 240, 0.25),
+              0 12px 30px rgba(199, 125, 255, 0.2);
+}
+
+/* Slide overlay shimmer effect */
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(76,201,240,0.2), rgba(255,255,255,0.15), rgba(199,125,255,0.2));
+  transform: skewX(-25deg);
+  transition: all 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.swiper-slide:hover::before {
+  left: 100%;
 }
 
 /* Content */
@@ -526,89 +546,121 @@ main img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 25px;
   position: relative;
   z-index: 2;
-}
-
-/* ICON – Cool Cyan → Aqua */
-.swiper-content i {
-  font-size: xx-large;
-  background: linear-gradient(to right, #4cc9f0, #00f5d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.35s ease;
-}
-
-/* HEADING – Violet → Pink */
-.swiper-content h2 {
-  font-weight: 600;
-  font-size: x-large;
-  padding: 20px;
   text-align: center;
-  background: linear-gradient(to right, #c77dff, #ff6fcf);
+}
+
+/* ICON – Premium Neon */
+.swiper-content i {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #00ffd5, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.35s ease;
+  transition: all 0.5s ease;
 }
 
-/* PARAGRAPH – Soft Sky → Lavender */
-.swiper-content p {
-  font-family: "Roboto Slab", serif;
-  text-align: justify;
-  padding: 10px;
-  font-size: larger;
-  background: linear-gradient(to right, #a2e0ff, #cda2ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.35s ease;
-}
-
-/* Hover glow */
-.swiper-slide:hover .swiper-content i,
-.swiper-slide:hover .swiper-content h2,
-.swiper-slide:hover .swiper-content p {
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
-}
-
-/* ICON hover – Neon Mint → Electric Blue */
-.swiper-slide:hover .swiper-content i {
-  background: linear-gradient(to right, #00ffd5, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(0, 245, 212, 0.8));
-  transform: scale(1.15) rotate(-3deg);
-}
-
-/* HEADING hover – Hot Pink → Royal Violet */
-.swiper-slide:hover .swiper-content h2 {
+/* HEADING – Vibrant Gradient */
+.swiper-content h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 20px 0 10px;
   background: linear-gradient(to right, #ff6fcf, #9b5cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(199, 125, 255, 0.6));
-  transform: translateY(-4px);
+  transition: all 0.5s ease;
 }
 
-/* PARAGRAPH hover – Ice Blue → Soft Lilac */
-.swiper-slide:hover .swiper-content p {
+/* PARAGRAPH – Soft pastel gradient */
+.swiper-content p {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  padding: 10px 0;
+  max-width: 400px;
   background: linear-gradient(to right, #c7f0ff, #d9c2ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 8px rgba(162, 224, 255, 0.45));
+  transition: all 0.5s ease;
 }
 
+/* Hover effects – glow, scale, and subtle animation */
+.swiper-slide:hover .swiper-content i {
+  transform: scale(1.2) rotate(-5deg);
+  filter: drop-shadow(0 0 12px rgba(0, 245, 212, 0.8));
+  background: linear-gradient(45deg, #00ffd5, #4cc9f0, #7f5fff);
+  -webkit-background-clip: text;
+}
 
-/* Swiper arrows – high visibility */
+.swiper-slide:hover .swiper-content h2 {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0 10px rgba(255, 111, 207, 0.6));
+  background: linear-gradient(to right, #ff6fcf, #ff4d8d, #9b5cff);
+  -webkit-background-clip: text;
+}
+
+.swiper-slide:hover .swiper-content p {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(199, 125, 255, 0.45));
+  background: linear-gradient(to right, #c7f0ff, #a2e0ff, #d9c2ff);
+  -webkit-background-clip: text;
+}
+
+/* Swiper arrows – bold neon look */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #00ffcc !important;
-  transition: color 0.3s ease;
+  color: #00ffd5 !important;
+  font-size: 2rem;
+  transition: all 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   color: #ff6fcf !important;
+  transform: scale(1.2);
 }
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  background: rgba(76, 201, 240, 0.5);
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6fcf;
+  box-shadow: 0 0 8px rgba(255, 111, 207, 0.7);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .swiper-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .swiper-content i {
+    font-size: 2.5rem;
+  }
+
+  .swiper-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .swiper-content h2 {
+    font-size: 1.3rem;
+    padding: 10px 0;
+  }
+
+  .swiper-content i {
+    font-size: 2rem;
+  }
+
+  .swiper-content p {
+    font-size: 0.9rem;
+  }
+}
+
 
 @media screen and (max-width: 550px) {
   .swiper-content h2 {
@@ -752,7 +804,7 @@ main img {
 /* BUTTON */
 .Table2 .container1 .box button  {
   margin-top: 10px;
-  background: linear-gradient(to right, #00ffd5, #38bdf8);
+  background: linear-gradient(to right, #5b2dbf, #8b5cf6);
   border-radius: 10px;
   cursor: pointer;
   padding: 6px 14px;
@@ -824,95 +876,206 @@ p {
     padding: 4px 6px;
   }
 }
-
 .Table3 {
   width: 100%;
+  padding: 30px 0px;
 }
 
+/* Layout */
 .Table3 .container {
-  gap: 10px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 25px;
   padding: 10px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Card */
+.Table3 .container .box {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1a0f2e, #2c1555);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Lift + glow */
+.Table3 .container .box:hover {
+  transform: translateY(-14px) scale(1.03);
+box-shadow:
+  rgba(124, 58, 237, 0.25) 0px 4px 16px,
+  rgba(124, 58, 237, 0.20) 0px 8px 24px,
+  rgba(124, 58, 237, 0.18) 0px 16px 56px;
+
+}
+
+/* Image wrapper */
+.Table3 .container .box .box-img {
+  width: 100%;
+  height: 50vh;
   overflow: hidden;
 }
 
-.Table3 .container .box {
-  background-color: #a392f5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 12px;
-  width: 100%;
-}
-
-.Table3 .container .box .box-img {
-  width: 100%;
-}
-
+/* Image */
 .Table3 .container .box .box-img img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(55%) saturate(85%);
+  transform: scale(1);
+  transition: all 0.6s ease;
 }
 
+/* Image reveal */
 .Table3 .container .box:hover .box-img img {
-  filter: brightness(100%);
+  filter: brightness(100%) saturate(120%);
+  transform: scale(1.1);
 }
 
+/* Gradient overlay on image */
+.Table3 .container .box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 15, 46, 0.85),
+    rgba(26, 15, 46, 0.2)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* Show overlay */
+.Table3 .container .box:hover::before {
+  opacity: 1;
+}
+
+/* Content */
 .Table3 .container .box .box-content {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.Table3 .container .box .box-content h2 {
-  color: #2c1555; /* Deep violet */
-  font-weight: 700;
-  padding: 5px;
   text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
 }
 
+/* Content float */
+.Table3 .container .box:hover .box-content {
+  transform: translateY(0);
+}
+
+/* Heading – Neon Violet → Pink */
+.Table3 .container .box .box-content h2 {
+  font-weight: 700;
+  font-size: x-large;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, #c77dff, #ff6fcf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(199, 125, 255, 0.6));
+}
+
+/* Paragraph – Soft Ice Blue */
 .Table3 .container .box .box-content p {
   font-family: "Roboto Slab", serif;
-  padding: 10px;
-  font-size: larger;
-  color: #2c1555; /* Deep violet */
-  font-weight: 700;
+  font-size: large;
+  line-height: 1.6;
+  background: linear-gradient(to right, #a2e0ff, #cda2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Bottom accent line */
+.Table3 .container .box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #00ffd5, #ff6fcf);
+  transition: all 0.5s ease;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Accent expand */
+.Table3 .container .box:hover::after {
+  width: 80%;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button base */
 .heading button {
-  background-color: #2c1555;
-  color: white;
-  border-radius: 8px;
+  position: relative;
+  background: linear-gradient(135deg, #2c1555, #5b2dbf);
+  border: none;
+  border-radius: 14px;
+  padding: 10px 22px;
   cursor: pointer;
-  padding: 4px 6px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  /* box-shadow: 0 10px 20px rgba(44, 21, 85, 0.35); */
 }
 
+/* Button text */
 .heading button p {
+  margin: 0;
   font-size: medium;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
+/* Light sweep effect */
+.heading button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+/* Hover effects */
 .heading button:hover {
-  background-color: #4b1f8a; /* lighter purple */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(44, 21, 85, 0.3);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 18px 35px rgba(91, 45, 191, 0.55);
 }
 
-.Table3 .container .box:hover {
-  border-bottom: 8px solid #2c1555;
+/* Shine sweep */
+.heading button:hover::before {
+  left: 120%;
 }
 
-.Table3 .container .box:hover i,
-h2,
-p {
-  filter: drop-shadow(0 0 4px rgba(44, 21, 85, 0.5));
+/* Active click */
+.heading button:active {
+  transform: scale(0.96);
 }
+
 
 @media screen and (max-width: 1140px) {
   .Table3 .container {
@@ -921,80 +1084,178 @@ p {
   }
 }
 
-/* Final added */
-
+/* ===== PRICING SECTION ===== */
 .Table4 {
-  padding: 10px 5%;
+  padding: 90px 5%;
   display: flex;
-  gap: 20px;
-  overflow-x: hidden;
+  gap: 35px;
+  justify-content: center;
+  align-items: stretch;
+  background: radial-gradient(circle at top, #1a1038, #0a0313);
 }
 
+/* ===== CARD ===== */
 .Table4 .container {
+  position: relative;
   width: 100%;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #a392f5;
-  border-radius: 12px;
-  padding: 20px;
+  padding: 38px 26px;
+  border-radius: 20px;
+  background: linear-gradient(
+    160deg,
+    rgba(44, 21, 85, 0.95),
+    rgba(20, 8, 50, 0.98)
+  );
+  border: 1px solid rgba(163, 146, 245, 0.25);
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    rgba(163, 146, 245, 0.25) 0px 15px 45px,
+    rgba(44, 21, 85, 0.9) 0px 30px 90px;
 }
 
+/* ===== NEON TOP LINE ===== */
+.Table4 .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #a392f5,
+    #4cc9f0,
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.Table4 .container:hover::before {
+  left: 0;
+}
+
+/* ===== FLOAT + GLOW HOVER ===== */
+.Table4 .container:hover {
+  transform: translateY(-18px) scale(1.04);
+  box-shadow:
+    rgba(163, 146, 245, 0.55) 0px 30px 70px,
+    rgba(76, 201, 240, 0.25) 0px 40px 120px;
+  border-color: rgba(163, 146, 245, 0.6);
+}
+
+/* ===== FEATURED CARD ===== */
+.Table4 .container.featured {
+  transform: scale(1.08);
+  border: 2px solid rgba(76, 201, 240, 0.7);
+  box-shadow:
+    rgba(76, 201, 240, 0.55) 0px 35px 90px;
+}
+
+/* ===== PLAN TITLE ===== */
 .Table4 .container h2 {
-  padding: 10px;
-  background: linear-gradient(to right, #d10b8f, #3a0475);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  background: linear-gradient(to right, #4cc9f0, #a392f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.6px;
 }
 
+/* ===== PRICE ===== */
 .Table4 .container h3 {
-  background: linear-gradient(to right, #b400ff, #4a0e8f);
+  font-size: 2.9rem;
+  font-weight: 900;
+  margin-bottom: 22px;
+  background: linear-gradient(to right, #ffffff, #cdbbff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Roboto Slab", serif;
+}
+
+/* ===== FEATURES LIST ===== */
+.Table4 .container ul {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.Table4 .container ul li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 14px;
+}
+
+.Table4 .container ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #4cc9f0;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px rgba(76, 201, 240, 0.8);
+   /* Add rotation animation */
+  display: inline-block;
+  animation: rotateInfinite 0.01ms linear infinite;
+}
+
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .Table4 .container ul li p {
-  color: #0a1a4f;
-  font-size: medium;
-  padding: 5px;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: #e0d9ff;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
-.Table4 .container:hover {
-  border-bottom: 8px solid #2c1555;
-}
-
+/* ===== BUTTON ===== */
 .Table4 .container button {
-  display: inline-block;
-  padding: 10px 25px;
-  margin-top: 10px;
-  background: linear-gradient(to right, #d10b8f, #4a0e8f);
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 8px;
-  font-family: "Roboto Slab", serif;
-  letter-spacing: 0.5px;
+  margin-top: auto;
+  padding: 14px 40px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    #4cc9f0,
+    #a392f5,
+    #4cc9f0
+  );
+  background-size: 200% auto;
+  transition: all 0.45s ease;
+  box-shadow: 0 0 25px rgba(76, 201, 240, 0.35);
 }
 
-.Table4 .container button a {
-  text-decoration: none;
-}
-
-.Table4 .container button a p {
-  color: white;
-}
-
+/* ===== BUTTON ANIMATION ===== */
 .Table4 .container button:hover {
-  background: linear-gradient(to right, #ff4ecd, #6d21ff);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(98, 0, 255, 0.35);
+  background-position: right center;
+  transform: translateY(-4px) scale(1.12);
+  box-shadow:
+    0 10px 35px rgba(76, 201, 240, 0.7),
+    0 0 40px rgba(163, 146, 245, 0.6);
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .Table4 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 @media screen and (max-width: 1250px) {
   .Table4 {
