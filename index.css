@@ -289,8 +289,7 @@ main img {
   }
 }
 
-
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .main-content {
     top: 30%;
     padding: 20px;
@@ -343,7 +342,7 @@ main img {
   overflow-x: hidden;
 }
 
-.container {
+.Table1 .container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   padding: 10px 5%;
@@ -379,7 +378,7 @@ main img {
 }
 
 @media screen and (max-width: 1200px) {
-  .container {
+  .Table1 .container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 10px;
@@ -387,7 +386,7 @@ main img {
 }
 
 @media screen and (max-width: 960px) {
-  .container {
+  .Table1 .container {
     display: grid;
     grid-template-columns: auto auto;
   }
@@ -412,7 +411,7 @@ main img {
   .Table1 {
     padding: 30px;
   }
-  .container {
+  .Table1 .container {
     padding: 0px;
     display: grid;
     grid-template-columns: auto;
@@ -448,6 +447,9 @@ main img {
     font-size: large;
     padding: 5px;
   }
+  .heading h3 {
+    font-size: 28px;
+  }
 }
 
 /* -------------------- Swiper---------------------- */
@@ -457,92 +459,157 @@ main img {
   margin: 20px;
   z-index: -1;
 }
-
+/* Base slide */
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background: #a392f5; */
-  border-radius: 10px;
-  z-index: -1;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 25px 5px;
+  border-radius: 12px;
+
+  /* UPDATED BASE BACKGROUND */
+  background: linear-gradient(
+    135deg,
+    #271a4b,
+    #4c2c91
+  ); /* Deep Violet → Indigo */
 }
 
-/* Hover effect for each box */
-.swiper-slide {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: 1px solid #a392f5;
-}
-
+/* Lift on hover */
 .swiper-slide:hover {
-  border-bottom: 8px solid #2c1555;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(44, 21, 85, 0.25);
+  color: white;
 }
 
-.append-buttons {
-  text-align: center;
-  margin-top: 20px;
+/* Background fill animation */
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+
+  /* Hover fill gradient */
+  background: linear-gradient(to top, #2c1555, #a392f5);
+
+  transition: height 0.45s ease-in-out;
+  z-index: 0;
 }
-.append-buttons a {
-  display: inline-block;
-  border: 1px solid #007aff;
-  color: #007aff;
-  text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin: 0 10px;
-  font-size: 13px;
+
+/* On hover: fill from bottom → top */
+.swiper-slide:hover::before {
+  height: 100%;
+}
+
+/* Keep content above background */
+.swiper-content {
+  position: relative;
+  z-index: 2;
 }
 
 .swiper-content {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: -1;
+  gap: 10px;
 }
 
+/* Icon motion */
 .swiper-content i {
-  font-size: xx-large;
-  background: linear-gradient(to right, #2c1555, #0a0313);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: -1;
-}
-
-.swiper-content h2 {
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #2c1555, #0a0313);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
   font-size: x-large;
-  padding: 20px;
-  z-index: -1;
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-.swiper-slide:hover .swiper-content i,
+.swiper-slide:hover .swiper-content i {
+  transform: rotate(-8deg) scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(44, 21, 85, 0.6));
+}
+
+/* Title lift */
+.swiper-content h2 {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
 .swiper-slide:hover .swiper-content h2 {
-  filter: drop-shadow(0 0 4px rgba(44, 21, 85, 0.5));
+  transform: translateY(-6px);
+  filter: drop-shadow(0 0 6px rgba(44, 21, 85, 0.5));
 }
 
+/* Paragraph reveal */
 .swiper-content p {
-  font-family: "Roboto Slab", serif;
-  text-align: justify;
-  padding: 10px;
+  padding: 0px 5px;
   font-size: larger;
+  opacity: 0.9;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  font-family: "Roboto Slab", serif;
 }
+
+/* ICON – Neon Aqua Glow */
+.swiper-slide .swiper-content i {
+  background: linear-gradient(to right, #00f5d4, #4cc9f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* HEADING – Electric Pink → Violet */
+.swiper-slide .swiper-content h2 {
+  background: linear-gradient(to right, #ff4d8d, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* PARAGRAPH – Soft Ice Lavender */
+.swiper-slide .swiper-content p {
+  background: linear-gradient(to right, #e0c3fc, #b8c0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ICON hover – Electric Lime → Neon Green */
+.swiper-slide:hover .swiper-content i {
+  background: linear-gradient(to right, #a8ff60, #4cff8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.35s ease;
+}
+
+/* HEADING hover – Magenta → Fuchsia */
+.swiper-slide:hover .swiper-content h2 {
+  background: linear-gradient(to right, #ff4de8, #c34dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.35s ease;
+}
+
+/* PARAGRAPH hover – Soft Sky Blue → Lavender */
+.swiper-slide:hover .swiper-content p {
+  background: linear-gradient(to right, #a2e0ff, #cda2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.35s ease;
+}
+
+.swiper-slide:hover .swiper-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Default arrow color */
 .swiper-button-next,
 .swiper-button-prev {
-  color: purple !important; /* deep dark red */
+  color: #00ffcc !important; /* Neon aqua / cyan for max visibility */
+  transition: color 0.3s ease;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: purple !important;
+/* Hover arrow color */
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+  color: #ff6fcf !important; /* Hot pink / magenta on hover for contrast */
 }
 
 @media screen and (max-width: 550px) {
@@ -572,7 +639,6 @@ main img {
 
 /* Table 2 */
 
-
 .Table2 .container1 {
   display: flex;
   padding: 10px;
@@ -580,57 +646,123 @@ main img {
 }
 
 .Table2 .container1 .box {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #a392f5;
+  background-color: #271a4b;
   border-radius: 12px;
   cursor: pointer;
   padding: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover lift */
+.Table2 .container1 .box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(44, 21, 85, 0.3);
+}
+
+/* Background fill overlay */
+.Table2 .container1 .box::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100%; /* start outside on the right */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #4c2c91, #6f52c3); /* gradient fill */
+  transform: skewX(-25deg);
+  transition: all 0.5s ease-in-out;
+  z-index: 0;
+}
+
+/* Hover effect: slide from right → left */
+.Table2 .container1 .box:hover::before {
+  right: 0; /* slide to cover card */
+}
+
+/* Keep content above overlay */
+.Table2 .container1 .box i,
+.Table2 .container1 .box h2,
+.Table2 .container1 .box p .Table2 .container1 .box a {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Optional: slight content lift */
+.Table2 .container1 .box:hover i,
+.Table2 .container1 .box:hover h2,
+.Table2 .container1 .box:hover p {
+  transform: translateY(-3px);
 }
 
 .Table2 .container1 .box i {
   font-size: xx-large;
-  background: linear-gradient(to right, #2c1555, #0a0313);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #4cc9f0;
   padding: 15px 0px;
+  transition: transform 0.45s ease, filter 0.45s ease;
 }
 
 .Table2 .container1 .box h2 {
-  background: linear-gradient(to right, #2c1555, #0a0313);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-align: center;
+  color: #e0c3fc;
   padding: 5px;
 }
 
 .Table2 .container1 .box p {
+  color: #cfe9ff;
   font-family: "Roboto Slab", serif;
   text-align: justify;
   padding: 10px;
   font-size: larger;
 }
 
+.Table2 .container1 .box:hover i {
+  background: linear-gradient(to right, #f72585, #b5179e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: rotate(-8deg) scale(1.2);
+}
+
+.Table2 .container1 .box:hover h2 {
+  background: linear-gradient(to right, #ffb4a2, #e5989b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Table2 .container1 .box:hover p {
+  background: linear-gradient(to right, #f1faee, #e0fbfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .Table2 .container1 .box button {
-  background-color: #2c1555;
+  background-color: peru;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   padding: 4px 6px;
 }
+.btn {
+  text-decoration: none;
+  position: relative;
+  background-color: peru;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 6px;
+}
 
 /* Hover Effect */
 .Table2 .container1 .box button:hover {
-  background-color: #4b1f8a; /* lighter purple */
+  background-color: #6a9bff; /* lighter purple */
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(44, 21, 85, 0.3);
-}
-
-.Table2 .container1 .box:hover {
-  border-bottom: 8px solid #2c1555;
 }
 
 .Table2 .container1 .box:hover i,
@@ -662,6 +794,7 @@ p {
     padding: 5px 0px;
   }
 }
+
 @media screen and (max-width: 380px) {
   .Table2 .container1 .box p {
     font-size: medium;
@@ -679,88 +812,132 @@ p {
     padding: 4px 6px;
   }
 }
-
 .Table3 {
   width: 100%;
+  padding: 30px 0;
 }
 
+/* Layout */
 .Table3 .container {
-  gap: 10px;
+  gap: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
+/* Card */
 .Table3 .container .box {
-  background-color: #a392f5;
+  position: relative;
+  background: linear-gradient(135deg, #271a4b, #4c2c91);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
-  border-radius: 12px;
+  padding: 14px;
+  border-radius: 16px;
   width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
+/* Lift & glow */
+.Table3 .container .box:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 45px rgba(44, 21, 85, 0.45);
+}
+
+/* Image wrapper */
 .Table3 .container .box .box-img {
   width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
+/* Image */
 .Table3 .container .box .box-img img {
   width: 100%;
+  height: 50vh;
+  border-radius: 14px;
   object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(55%) saturate(90%);
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 
+/* Image reveal */
 .Table3 .container .box:hover .box-img img {
-  filter: brightness(100%);
+  filter: brightness(100%) saturate(120%);
+  transform: scale(1.08);
 }
 
+/* Content */
 .Table3 .container .box .box-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.Table3 .container .box .box-content h2 {
-  color: #2c1555; /* Deep violet */
-  font-weight: 700;
-  padding: 5px;
+  padding: 15px 10px;
   text-align: center;
 }
 
-.Table3 .container .box .box-content p {
-  font-family: "Roboto Slab", serif;
-  padding: 10px;
-  font-size: larger;
-  color: #2c1555; /* Deep violet */
+/* Heading */
+.Table3 .container .box .box-content h2 {
   font-weight: 700;
+  font-size: x-large;
+  padding: 8px 0;
+  background: linear-gradient(to right, #ff6fcf, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
 }
 
+/* Paragraph */
+.Table3 .container .box .box-content p {
+  font-family: "Roboto Slab", serif;
+  font-size: larger;
+  line-height: 1.5;
+  background: linear-gradient(to right, #a2e0ff, #cda2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+}
+
+/* Hover glow on text */
+.Table3 .container .box:hover h2,
+.Table3 .container .box:hover p {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+}
+
+
 .heading button {
-  background-color: #2c1555;
+  background-color: peru;
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  padding: 4px 6px;
 }
 
-.heading button p {
-  font-size: medium;
+.heading .btn {
+  text-decoration: none;
+  background-color: peru;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px;
+  font-size: small;
 }
 
+.btn p {
+  font-family: "Roboto Slab", serif;
+}
+
+/* Hover Effect */
 .heading button:hover {
-  background-color: #4b1f8a; /* lighter purple */
+  background-color: #6a9bff; /* lighter purple */
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(44, 21, 85, 0.3);
-}
-
-.Table3 .container .box:hover {
-  border-bottom: 8px solid #2c1555;
 }
 
 .Table3 .container .box:hover i,
@@ -773,6 +950,17 @@ p {
   .Table3 .container {
     flex-wrap: wrap;
     gap: 50px;
+  }
+  .Table3 .container .box .box-img img {
+    height: 40vh;
+    object-fit: cover;
+    object-position: center;
+  }
+  .Table3 .container .box .box-content {
+    padding: 5px;
+  }
+  .Table3 .container .box {
+    padding: 8px;
   }
 }
 
