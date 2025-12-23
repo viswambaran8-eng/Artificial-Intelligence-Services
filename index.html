@@ -91,15 +91,15 @@
       <main>
         <img src="Assets/slide-image_11zon.webp" alt="" />
         <div class="main-content">
-          <h2>World Leading Artificial Intelligence</h2>
-          <p>
+          <h2 data-aos="fade-right" data-aos-delay="300">World Leading Artificial Intelligence</h2>
+          <p  data-aos="fade-right" data-aos-delay="500">
             &nbsp; &nbsp; &nbsp; &nbsp; World-leading artificial intelligence
             delivers advanced, reliable AI services that enhance innovation,
             efficiency, and decision-making.
           </p>
         </div>
       </main>
-      <div class="Table1" data-aos="zoom-in">
+      <div class="Table1">
         <div class="container">
           <div class="Box">
             <h2>3 K</h2>
@@ -402,11 +402,12 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: 'ease-out-cubic',
+    startEvent: 'aos:ready' // manual trigger
+  });
   </script>
   <script>
     const swiper = new Swiper(".swiper", {

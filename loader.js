@@ -13,12 +13,33 @@ for (let i = 0; i < dots; i++) {
 
 circle.innerHTML = points;
 
-// Load Out
+
+// It's for Loader //
 
 const LoaderApp = document.querySelector('.body1');
 const MainContent = document.querySelector('.the-main');
 
+/* Loader duration */
+const LOADER_TIME = 2500;
+
 setTimeout(() => {
-  LoaderApp.style.display = 'none';
-  MainContent.style.opacity = '1';
-}, 2500); // 2.5 seconds
+
+  /* Fade loader out */
+  LoaderApp.style.opacity = '0';
+
+  setTimeout(() => {
+    LoaderApp.style.display = 'none';
+
+    /* Show main content */
+    MainContent.style.visibility = 'visible';
+    MainContent.style.opacity = '1';
+
+    /* 🔥 Start AOS exactly now */
+    AOS.refreshHard();
+
+    /* Trigger AOS manually */
+    document.dispatchEvent(new Event('aos:ready'));
+
+  }, 600); // matches CSS transition
+
+}, LOADER_TIME);
