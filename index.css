@@ -599,6 +599,7 @@ main img {
   opacity: 0.9;
 }
 
+
 /* ===== HOVER EFFECTS FOR CONTENT ===== */
 .swiper-slide:hover .swiper-content i {
   transform: scale(1.25) rotate(-5deg);
