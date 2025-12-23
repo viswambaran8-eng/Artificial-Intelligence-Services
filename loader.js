@@ -21,4 +21,4 @@ const MainContent = document.querySelector('.the-main');
 setTimeout(() => {
   LoaderApp.style.display = 'none';
   MainContent.style.opacity = '1';
-}, 4000); // 4 seconds
+}, 2000); // 2 seconds
