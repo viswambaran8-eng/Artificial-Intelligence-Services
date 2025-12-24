@@ -955,22 +955,23 @@ p {
 .heading button {
   background-color: peru;
   color: white;
+  padding: 0px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-.heading .btn {
+.heading a .btn {
   text-decoration: none;
   background-color: peru;
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  padding: 5px;
-  font-size: small;
+  padding: 1px;
 }
 
 .btn p {
   font-family: "Roboto Slab", serif;
+  font-size: large;
 }
 
 /* Hover Effect */
